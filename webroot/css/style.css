@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Gabarito', cursive;
+}
+a{
+    text-decoration: none;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+header{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-flow: column;
+    background-color: red;
+}
+#pTitulo{
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+}
+h1{
+    height: 100%;
+    width: 100%;
+    font-size: 2.5rem;
+}
+body{
+    width: auto; 
+    height: auto;
+    background-image: url(../image/fondo.png);
+    background-attachment: fixed;
+    background-size: 100% 110%;
+    margin-top: 100px;
+}
+main{ 
+    padding-left: 20px; /*ESTO MUEVE TODO A LA DERECHA Y SOLO QUIERO QUE ME MUEVA LOS EJERCICIOS*/
+}
+.ejercicio{
+    width: 80%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff7e5;
+}
+.formulario{
+    width: 95%;
+    margin: 10px;
+}
+.formulario * td:nth-of-type(1){
+    width: 20%;
+    text-align: right;
+}
+.formulario * td:nth-of-type(2){
+    width: 30%;
+}
+.barraBusqueda{
+    width: 95%;
+    padding: 0;
+    margin: 10px 0;
+    box-shadow: none;
+}
+.barraBusqueda * td:nth-of-type(1){ /*Descripcion a buscar:*/
+    width: 150px;
+    text-align: right;
+}
+.barraBusqueda * td:nth-of-type(2){
+    width: 35%;
+}
+td:nth-child(2) input{
+    width: 100%
+}
+input{
+    border: 1px solid grey;
+}
+.iObligatorio{
+    background-color: yellow;
+}
+input:disabled{
+    background-color: #bbb;
+}
+.error{
+    display: inline-block;
+    width: 80%;
+    color: red;
+}
+.imgError{
+    display: block;
+    width: 600px;
+    margin: auto;
+    margin-top: 200px;
+}
+.divError{
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #F73C90;
+    text-align: center;
+}
+caption{
+    color: #59483e;
+    font-size: 1.2rem;
+}
+td{
+    padding: 0 10px;
+    color: #59483e;
+}
+td:nth-of-type(2), td:nth-of-type(3){
+    width: 30px;
+    
+}
+th{
+    background: none;
+    color: #59483e;
+}
+tr:nth-of-type(even){
+    background-color: #f8afb8;
+}
+td img{
+    width: 30px;
+}
+.script tr td:nth-of-type(2){
+    width: 30px;
+}
+.error{
+    color: red;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+}
+footer #derechos{
+    width: 75%;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 1rem;
+}
+#derechos a{
+    text-decoration: underline;
+}
+footer #fotos{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+footer * img{
+    width: 40px;
+}
+#sauces{
+    background-color: white;
+    border-radius: 50%;
+}
+#home{
+    width: 35px;
+}

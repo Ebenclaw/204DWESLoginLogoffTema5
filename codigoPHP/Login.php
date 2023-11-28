@@ -11,11 +11,9 @@
 
 <body>
     <header>
-        <a href="../../index.html"><img id="logo" src="../webroot/image/logo.png" alt="Logo"></a>
         <h1>Login Logoff</h1>
     </header>
     <main>
-        <h2>Accede a tu cuenta</h2>
         <?php
             /*
              * @author Rebeca Sánchez Pérez
@@ -65,7 +63,7 @@
                 $aRespuestas['descDepartamentoABuscar'] = $_REQUEST['descDepartamentoABuscar'];
             }
             ?>
-        
+            <h2>Accede a tu cuenta</h2>
             <div class="ejercicio">
                 <!-- Se crea un formulario tipo post para agregar la opcion de busqueda-->
                 <form name= "loginlogoff" action="<?php echo $_SERVER['PHP_SELF'];?>" id="form" method="post">
