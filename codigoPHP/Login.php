@@ -12,20 +12,21 @@
 <body>
     <header>
         <h1>Login Logoff</h1>
+        <p id="pTitulo">Accede a tu cuenta</p>
     </header>
-    <main>
+    <main  class="main2">
         <?php
             /*
              * @author Rebeca Sánchez Pérez
-             * @version 1.2
-             * @since 15/11/2023
+             * @version 1.3
+             * @since 01/12/2023
              */
         
             // DECLARACION E INICIALIZACION DE VARIABLES
             // Se incuye la libreria de validacion para usar los metodos de validacion de las entradas del formulario
             require_once '../core/231018libreriaValidacion.php';
             // Se incuye la libreria de configuracion de bases de datos que almacena las constantes de la conexion
-            require_once '../config/confDB.php';
+            require_once '../config/confDBPDO.php';
             // La varible $entradaOK es un interruptor que recibe el valor true cuando no existe ningun error en la entrada
             $entradaOK = true;
             // El array $aRespuestas almacena los valores que son introducidos en cada input del formulario
@@ -63,17 +64,22 @@
                 $aRespuestas['descDepartamentoABuscar'] = $_REQUEST['descDepartamentoABuscar'];
             }
             ?>
-            <h2>Accede a tu cuenta</h2>
             <div class="ejercicio">
                 <!-- Se crea un formulario tipo post para agregar la opcion de busqueda-->
                 <form name= "loginlogoff" action="<?php echo $_SERVER['PHP_SELF'];?>" id="form" method="post">
-                    <table class="barraBusqueda">
+                    <table class="inicioSesion">
                         <tr>
-                            <td><label for="descDepartamentoABuscar">Email: </label></td>
-                            <td><input type="text" name="descDepartamentoABuscar" id="descDepartamentoABuscar" placeholder="email" value="<?php echo(isset($_REQUEST['descDepartamentoABuscar'])?$_REQUEST['descDepartamentoABuscar']:'') ?>"></td>
-                            <td><input type="submit" form="form3" value="Buscar" name="enviar" class="botonBuscar"></td>
+                            <td><input type="text" name="descDepartamentoABuscar" id="descDepartamentoABuscar" placeholder="Usuario" value="<?php echo(isset($_REQUEST['descDepartamentoABuscar'])?$_REQUEST['descDepartamentoABuscar']:'') ?>"></td>
                             <td><?php // Se muestra el mensaje de error 
                             echo('<p class="error">'.$aErrores['descDepartamentoABuscar'].'</p>');?></td>
+                        </tr>  
+                        <tr>
+                            <td><input type="text" name="descDepartamentoABuscar" id="descDepartamentoABuscar" placeholder="Contraseña" value="<?php echo(isset($_REQUEST['descDepartamentoABuscar'])?$_REQUEST['descDepartamentoABuscar']:'') ?>"></td>
+                            <td><?php // Se muestra el mensaje de error 
+                            echo('<p class="error">'.$aErrores['descDepartamentoABuscar'].'</p>');?></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" form="form3" value="Iniciar Sesion" name="enviar" class="botonBuscar"></td>
                         </tr>
                     </table>
                 </form>
@@ -98,7 +104,7 @@
 //                echo('Coincidencias: <b>'.$count.'</b></div>');
 
                 // Se crea una tabla para imprimir las tuplas
-                echo('<div class="ejercicio"><h2>Departamentos:</h2><table class="ej16"><tr><th>Codigo</th><th>Descripcion</th><th>Fecha de alta</th><th>Volumen</th><th>Fecha de baja</th></tr>');
+                echo('<div><h2>Departamentos:</h2><table class="ej16"><tr><th>Codigo</th><th>Descripcion</th><th>Fecha de alta</th><th>Volumen</th><th>Fecha de baja</th></tr>');
                 // Se instancia un objeto tipo PDO que almacena cada fila de la consulta
                 while($oDepartamento = $resultadoConsulta->fetchObject()){
                     echo('<tr>');

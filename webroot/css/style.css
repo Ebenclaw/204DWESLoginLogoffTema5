@@ -6,128 +6,104 @@
 }
 a{
     text-decoration: none;
+    color: #59483e;
 }
 html{
     width: 100%;
     height: 100%;
-}
-header{
-    width: 50%;
-    height: 50%;
-    display: flex;
-    flex-flow: column;
-    background-color: red;
-}
-#pTitulo{
-    height: 100%;
-    width: 100%;
-    font-size: 1rem;
-}
-h1{
-    height: 100%;
-    width: 100%;
-    font-size: 2.5rem;
+    color: #59483e;
 }
 body{
-    width: auto; 
-    height: auto;
     background-image: url(../image/fondo.png);
     background-attachment: fixed;
     background-size: 100% 110%;
-    margin-top: 100px;
 }
-main{ 
-    padding-left: 20px; /*ESTO MUEVE TODO A LA DERECHA Y SOLO QUIERO QUE ME MUEVA LOS EJERCICIOS*/
+header{
+/*    opacity: 0.2;*/
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: flex-end;
+/*    background-color: red;*/
+}
+#pTitulo{
+    padding-left: 10px;
+    font-size: 3rem;
+}
+h1{
+    font-size: 11rem;
+}
+.main1{
+/*    opacity: 0.5;*/
+    position: absolute;
+/*    background-color: green;*/
+    top: 0;
+    right: 0;
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+}
+.main2{
+/*    opacity: 0.5;*/
+    position: absolute;
+/*    background-color: green;*/
+    top: 0;
+    right: 0;
+    width: 100%; 
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+}
+.container{
+/*    background: blue;*/
+    width: 50%; 
+    height: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: end;
+}
+.container li{
+    text-align: right;
+    list-style: none;
+    font-size: 2rem;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+.container img{
+    padding-top: 30px;
+    padding-right: 20px;
+    justify-content: flex-end;
 }
 .ejercicio{
-    width: 80%;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #fff7e5;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    margin-top: 476.5px;
+/*    background-color: purple;*/
 }
-.formulario{
-    width: 95%;
-    margin: 10px;
+form{
+    margin-left: 10px;
+    width: 100%;
+    height: 100%;
 }
-.formulario * td:nth-of-type(1){
-    width: 20%;
-    text-align: right;
-}
-.formulario * td:nth-of-type(2){
-    width: 30%;
-}
-.barraBusqueda{
-    width: 95%;
-    padding: 0;
-    margin: 10px 0;
-    box-shadow: none;
-}
-.barraBusqueda * td:nth-of-type(1){ /*Descripcion a buscar:*/
-    width: 150px;
-    text-align: right;
-}
-.barraBusqueda * td:nth-of-type(2){
-    width: 35%;
-}
-td:nth-child(2) input{
-    width: 100%
+.inicioSesion{
+/*    background-color: yellow;*/
+    width: 100%;
 }
 input{
-    border: 1px solid grey;
+    font-size: 1.4rem;
+    width: 50%;
+    height: 30px;
+    margin-bottom: 20px
 }
-.iObligatorio{
-    background-color: yellow;
-}
-input:disabled{
-    background-color: #bbb;
-}
-.error{
-    display: inline-block;
-    width: 80%;
-    color: red;
-}
-.imgError{
-    display: block;
-    width: 600px;
-    margin: auto;
-    margin-top: 200px;
-}
-.divError{
-    width: 100%;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #F73C90;
-    text-align: center;
-}
-caption{
+/*input(submit){
     color: #59483e;
-    font-size: 1.2rem;
-}
-td{
-    padding: 0 10px;
-    color: #59483e;
-}
-td:nth-of-type(2), td:nth-of-type(3){
-    width: 30px;
-    
-}
-th{
-    background: none;
-    color: #59483e;
-}
-tr:nth-of-type(even){
-    background-color: #f8afb8;
-}
-td img{
-    width: 30px;
-}
-.script tr td:nth-of-type(2){
-    width: 30px;
-}
-.error{
-    color: red;
-}
+}*/
 footer{
     position: fixed;
     bottom: 0;
