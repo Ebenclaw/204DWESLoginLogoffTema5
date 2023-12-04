@@ -50,7 +50,7 @@
                 
                 try {
                     // Se instancia un objeto tipo PDO que establece la conexion a la base de datos con el usuario especificado
-                    $miDB = new PDO('mysql:host='.IPMYSQL.'; dbname='.NOMBREDB,USUARIO,PASSWORD);
+                    $miDB = new PDO('mysql:host=192.168.1.204; dbname=DB204DWESLoginLogoffTema5','user204DWESLoginLogoffTema5','paso');
 
                     // Se inicializan variables heredoc que almacenan las consultas
                     $sql1 = 'SELECT * FROM T01_Usuario WHERE T01_CodUsuario="'.$_REQUEST['user'].'" and T01_Password="'.hash("sha256", ($_REQUEST['user'] . $_REQUEST['pass'])).'";';
@@ -105,7 +105,7 @@
             if($entradaOK){
                 try {
                     // Se instancia un objeto tipo PDO que establece la conexion a la base de datos con el usuario especificado
-                    $miDB = new PDO('mysql:host='.IPMYSQL.'; dbname='.NOMBREDB,USUARIO,PASSWORD);
+                    $miDB = new PDO('mysql:host=192.168.1.204; dbname=DB204DWESLoginLogoffTema5','user204DWESLoginLogoffTema5','paso');
 
                     // Se inicializan variables que almacenan las consultas
                     $sql2 = 'SELECT * FROM T01_Usuario WHERE T01_CodUsuario="'.$_REQUEST['user'].'";';                    

@@ -15,8 +15,90 @@
         <p id="pTitulo">Bienvenido</p>
     </header>
     <main  class="main2">
-        
-        
+        <?php
+            /*
+             * @author Rebeca Sánchez Pérez
+             * @version 1.0
+             * @since 04/11/2023
+             */
+
+            // $_SESSION
+            echo('<div class="ejercicio">');
+            echo('<h3>$_SESSION</h3>');
+            foreach ($_SESSION as $key => $valor) {
+                echo('<u>'.$key.'</u> => <b>'.$valor.'</b><br>');
+            }
+            echo('</div>');
+
+            // $_COOKIE
+            echo('<div class="ejercicio">');
+            echo('<h3>$_COOKIE</h3>');
+            foreach ($_COOKIE as $key => $valor) {
+                echo('<u>'.$key.'</u> => <b>'.$valor.'</b><br>');
+            }
+            echo('</div>');
+
+            // $_SERVER
+            echo('<div class="ejercicio">');
+            echo('<h3>$_SERVER</h3>');
+            foreach ($_SERVER as $key => $valor) {
+                echo('<u>'.$key.'</u> => <b>'.$valor.'</b><br>');
+            }
+            echo('</div>');
+            
+            // $GLOBALS
+            echo('<div class="ejercicio">');
+            echo('<h3>$GLOBALS</h3>');
+            foreach ($GLOBALS as $key => $valor) {
+                foreach ($valor as $clave => $valor2) {
+                    echo('<u>'.$clave.'</u> => <b>'.$valor2.'</b><br>');
+                }
+            }
+            echo('</div>');
+
+            // $_GET
+            echo('<div class="ejercicio">');
+            echo('<h3>$_GET</h3>');
+            foreach ($_GET as $key => $valor) {
+                echo('<u>'.$key.'</u> => <b>'.$valor.'</b><br>');
+            }
+            echo('</div>');
+
+            // $_POST
+            echo('<div class="ejercicio">');
+            echo('<h3>$_POST</h3>');
+            foreach ($_POST as $key => $valor) {
+                echo('<u>'.$key.'</u> => <b>'.$valor.'</b><br>');
+            }
+            echo('</div>');
+
+            // $_FILES
+            echo('<div class="ejercicio">');
+            echo('<h3>$_FILES</h3>');
+            foreach ($_FILES as $key => $valor) {
+                echo('<u>'.$key.'</u> => <b>'.$valor.'</b><br>');
+            }
+            echo('</div>');
+
+            // $_REQUEST
+            echo('<div class="ejercicio">');
+            echo('<h3>$_REQUEST</h3>');
+            foreach ($_REQUEST as $key => $valor) {
+                echo('<u>'.$key.'</u> => <b>'.$valor.'</b><br>');
+            }
+            echo('</div>');
+
+            // $_ENV
+            echo('<div class="ejercicio">');
+            echo('<h3>$_ENV</h3>');
+            foreach ($_ENV as $key => $valor) {
+                echo('<u>'.$key.'</u> => <b>'.$valor.'</b><br>');
+            }
+            echo('</div>');
+            
+            // Se muestra en pantalla la información de PHP de nuestro servidor
+            phpinfo();
+        ?>
     </main>
     <footer>
         <div id="derechos">2023-2024 © Todos los derechos reservados: <a href="../../index.html">Rebeca Sánchez Pérez</a></div>
