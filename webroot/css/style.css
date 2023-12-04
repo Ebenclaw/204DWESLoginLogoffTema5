@@ -36,6 +36,15 @@ header{
 h1{
     font-size: 11rem;
 }
+.programa{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 40%;
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: flex-end;
+}
 .main1{
 /*    opacity: 0.5;*/
     position: absolute;
@@ -59,6 +68,14 @@ h1{
     display: flex;
     flex-flow: column;
 }
+.mensajeSesion{
+/*    background: yellow;*/
+    font-size: 1.5rem;
+    width: 99%;
+    margin-top: 20%;
+    margin-left: 10px;
+    margin-bottom: 30px;
+}
 .container{
 /*    background: blue;*/
     width: 50%; 
@@ -79,7 +96,7 @@ h1{
     padding-right: 20px;
     justify-content: flex-end;
 }
-.ejercicio{
+.ejercicioSesion{
     width: 50%;
     height: 100%;
     display: flex;
@@ -91,19 +108,42 @@ form{
     width: 100%;
     height: 100%;
 }
+.form1{
+    margin-left: 10px;
+    width: 99%;
+    height: 100%;
+    display: flex;
+}
+.botonPrograma{
+    margin-left: 0px;
+    margin-right: 30px;
+    width: 400px;
+}
 .inicioSesion{
 /*    background-color: yellow;*/
     width: 100%;
 }
+.inicioSesion td{
+    width: 50%;
+    height: 30px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
 input{
     font-size: 1.4rem;
-    width: 50%;
+    width: 100%;
     height: 30px;
     margin-bottom: 20px
 }
-/*input(submit){
+.error{
+    padding-left: 20px;
+    padding-bottom: 20px;
+    color: red;
+    font-size: 1.2rem;
+}
+.botonEnviar{
     color: #59483e;
-}*/
+}
 footer{
     position: fixed;
     bottom: 0;
