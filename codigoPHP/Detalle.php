@@ -1,3 +1,12 @@
+<?php
+/*
+ * @author Rebeca Sánchez Pérez
+ * @version 1.1
+ * @since 05/11/2023
+ */
+// Se renauda la sesion existente
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,18 +19,11 @@
 </head>
 
 <body>
-    <header>
-        <h1>Login Logoff</h1>
-        <p id="pTitulo">Bienvenido</p>
+    <header class="detalle">
+        <h1>Detalle</h1>
     </header>
-    <main  class="main2">
+    <main  class="mainDetalle">
         <?php
-            /*
-             * @author Rebeca Sánchez Pérez
-             * @version 1.0
-             * @since 04/11/2023
-             */
-
             // $_SESSION
             echo('<div class="ejercicio">');
             echo('<h3>$_SESSION</h3>');
@@ -105,7 +107,7 @@
         <div id="fotos">
             <a href="https://github.com/Ebenclaw/204DWESLoginLogoffTema5" target="_blank"><img id="git" src="../webroot/image/GitHub.png" alt="GitHub"></a>
             <a href="http://ieslossauces.centros.educa.jcyl.es/sitio/" target="_blank"><img id="sauces" src="../webroot/image/sauces.png" alt="Sauces"></a>
-            <a href="../indexLoginLogoffTema5.php"><img id="home" src="../webroot/image/home.png" alt="Inicio"></a>
+            <a href="Programa.php"><img id="home" src="../webroot/image/home.png" alt="Inicio"></a>
     </footer>
 </body>
 
