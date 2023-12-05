@@ -62,19 +62,8 @@
                     // Se instancia un objeto tipo PDO que almacena cada fila de la consulta
                     $usuarioActivo = $consulta1->fetchObject();
 
-                    // Se comprueba que la consulta no devulva null, es decir, que exista un usuario con el nombre introducido
-                    if ($consulta1->rowCount() > 0) {
-                        // Se encripta la contraseña
-                        $passwordEncriptado = hash("sha256", ($_REQUEST['user'] . $_REQUEST['pass']));
-                        // Se comprueba que la contraseña introducida coincide con la grabada en la base de datos
-                        if ($passwordEncriptado != $usuarioActivo->T01_Password) {
-                            // Se guardan los mensajes en $aErrores
-                            $aErrores['user'] = ""; 
-                            $aErrores['pass'] = "Contraseña incorrecta";
-                        }
-                        
                     // Sino se encuentran coincidencias en el nombre de usuario, guardan los mensajes de errores en $aErrores
-                    } else {
+                    if ($consulta1->rowCount() <= 0) {
                         $aErrores['user'] = "Usuario incorrecto"; 
                         $aErrores['pass'] = "Contraseña incorrecta"; 
                     }
@@ -109,7 +98,7 @@
                     // Se inicia la sesión
                     session_start(); 
                     // Se almacena en una variable de sesión el codigo del usuario
-                    $_SESSION['user204DWESLoginLogoffTema5'] = $_REQUEST['user']; 
+                    $_SESSION['user204DWESLoginLogoffTema5'] = $usuarioActivo->T01_CodUsuario; 
                     // Se almacena en una variable de sesión el nombre completo del usuario
                     $_SESSION['DescripcionUsuario'] = $usuarioActivo->T01_DescUsuario; 
                     // Se almacena en una variable de sesión el numero de conexiones
