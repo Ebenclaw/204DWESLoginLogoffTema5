@@ -50,7 +50,7 @@
                 
                 try {
                     // Se instancia un objeto tipo PDO que establece la conexion a la base de datos con el usuario especificado
-                    $miDB = new PDO('mysql:host=192.168.1.204; dbname=DB204DWESLoginLogoffTema5','user204DWESLoginLogoffTema5','paso');
+                    $miDB = new PDO('mysql:host='.IPMYSQL.'; dbname='.NOMBREDB,USUARIO,PASSWORD);
 
                     // Se inicializan variables heredoc que almacenan las consultas
                     $sql1 = 'SELECT * FROM T01_Usuario WHERE T01_CodUsuario="'.$_REQUEST['user'].'" and T01_Password="'.hash("sha256", ($_REQUEST['user'] . $_REQUEST['pass'])).'";';
@@ -105,7 +105,7 @@
             if($entradaOK){
                 try {
                     // Se instancia un objeto tipo PDO que establece la conexion a la base de datos con el usuario especificado
-                    $miDB = new PDO('mysql:host=192.168.1.204; dbname=DB204DWESLoginLogoffTema5','user204DWESLoginLogoffTema5','paso');
+                    $miDB = new PDO('mysql:host='.IPMYSQL.'; dbname='.NOMBREDB,USUARIO,PASSWORD);
 
                     // Se inicializan variables que almacenan las consultas
                     $sql2 = 'SELECT * FROM T01_Usuario WHERE T01_CodUsuario="'.$_REQUEST['user'].'";';                    
@@ -121,14 +121,15 @@
 
                     // Se almacenan el numero de conexiones en $nConexiones
                     $nConexiones = $registro->T01_NumConexiones; 
-                    // Se almacenan la fecha y hora de la ultima conexion 
-                    $fechaHoraUltimaConexion = $registro->T01_FechaHoraUltimaConexion;
+                    // Se almacenan la fecha y hora de la ultima conexion en un objeto datetime
+                    $fechaUltimaCon = $registro->T01_FechaHoraUltimaConexion; //esto devuleve un String
+                    $oFechaHoraUltimaConexion = new DateTime($fechaUltimaCon);
 
                     // Se convierte en entero el numero de conexiones devuelto por la consulta
                     settype($nConexiones, "integer"); 
                     
                     // Se prepara al consulta de actulizacion
-                    $sql3 = 'UPDATE T01_Usuario SET T01_NumConexiones ='.($nConexiones + 1).', T01_FechaHoraUltimaConexion="'.date('Y-m-d H:i:s', time()).'" WHERE T01_CodUsuario="'.$_REQUEST['user'].'";';
+                    $sql3 = 'UPDATE T01_Usuario SET T01_NumConexiones ='.($nConexiones + 1).', T01_FechaHoraUltimaConexion="'.$oFechaHoraUltimaConexion->format('Y-m-d H:i:s').'" WHERE T01_CodUsuario="'.$_REQUEST['user'].'";';
                     
                     // Se prepara la consulta
                     $consulta3 = $miDB->prepare($sql3);
@@ -141,7 +142,7 @@
                     // Se almacena en una variable de sesión el codigo del usuario
                     $_SESSION['user204DWESLoginLogoffTema5'] = $_REQUEST['user']; 
                     // Se almacena la fecha hora de la última conexión en una variable de sesión
-                    $_SESSION['FechaHoraUltimaConexionAnterior'] = $fechaHoraUltimaConexion; 
+                    $_SESSION['FechaHoraUltimaConexionAnterior'] = $oFechaHoraUltimaConexion; 
                     // Se redirije al usuario a la pagina 'Programa.php'
                     header('Location: Programa.php'); 
                     

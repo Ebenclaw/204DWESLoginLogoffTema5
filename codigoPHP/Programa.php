@@ -76,6 +76,13 @@ try {
     </header>
     <main  class="main2">
         <?php
+        // $_SERVER
+//            echo('<div class="ejercicio">');
+//            echo('<h3>$_SESSION</h3>');
+//            foreach ($_SESSION as $key => $valor) {
+//                echo('<u>'.$key.'</u> => <b>'.$valor.'</b><br>');
+//            }
+            echo('</div>');
             echo('<div class="mensajeSesion">');
             echo('Bienvenid@, <b>'.$nombre_usuario.'</b>! <br>');
             echo('Esta es la <b>'.$num_conexiones.'</b> vez que te conectas.<br>');  
