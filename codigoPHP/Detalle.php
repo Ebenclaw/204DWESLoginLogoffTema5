@@ -41,8 +41,8 @@ if (isset($_REQUEST['salir'])) {
     <main  class="mainDetalle">
         <div class="ejercicio ejercicioDetalle">
             <!-- Se crea un formulario tipo post para agregar la opcion de busqueda-->
-            <form name= "programa" action="<?php echo $_SERVER['PHP_SELF'];?>" id="formDetalle" method="post">
-                <input type="submit" form="form1" value="Salir" name="salir" class="botonPrograma">
+            <form name="programa" action="<?php echo $_SERVER['PHP_SELF'];?>" id="formDetalle" method="post">
+                <input type="submit" form="form1" value="Salir" name="salir" class="botonDetalle">
             </form>
         </div>
         <?php
