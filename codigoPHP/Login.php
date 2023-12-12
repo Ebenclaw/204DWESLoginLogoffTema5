@@ -80,8 +80,13 @@ if ($entradaOK) {
         // Se almacenan el numero de conexiones en $nConexiones
         $nConexiones = ($usuarioActivo->T01_NumConexiones) + 1;
         // Se almacenan la fecha y hora de la ultima conexion en un objeto datetime
-        $oFechaHoraUltimaConexionAnterior = new DateTime($usuarioActivo->T01_FechaHoraUltimaConexion);
-
+        if($usuarioActivo->T01_FechaHoraUltimaConexion==null){
+            $oFechaHoraUltimaConexionAnterior = null;
+        }else{
+            // Se almacena la fecha hora de la última conexión en una variable de sesión
+            $oFechaHoraUltimaConexionAnterior = new DateTime($usuarioActivo->T01_FechaHoraUltimaConexion);
+        }
+        
         // Se inicia la sesión
         session_start();
         // Se almacena en una variable de sesión el codigo del usuario
@@ -90,9 +95,13 @@ if ($entradaOK) {
         $_SESSION['DescripcionUsuario'] = $usuarioActivo->T01_DescUsuario;
         // Se almacena en una variable de sesión el numero de conexiones
         $_SESSION['NumeroConexiones'] = $nConexiones;
-        // Se almacena la fecha hora de la última conexión en una variable de sesión
-        $_SESSION['FechaHoraUltimaConexionAnterior'] = $oFechaHoraUltimaConexionAnterior->format('Y-m-d H:i:s');
-
+        // Se graba la fecha de ultima conexion a null si es la primera vez que se conecta
+        if($oFechaHoraUltimaConexionAnterior==null){
+            $_SESSION['FechaHoraUltimaConexionAnterior'] = null;
+        }else{
+            // Se almacena la fecha hora de la última conexión en una variable de sesión
+            $_SESSION['FechaHoraUltimaConexionAnterior'] = $oFechaHoraUltimaConexionAnterior->format('Y-m-d H:i:s');
+        }
         // Se prepara al consulta de actulizacion
         $sql2 = 'UPDATE T01_Usuario SET T01_NumConexiones =' . $nConexiones . ', T01_FechaHoraUltimaConexion=now() WHERE T01_CodUsuario="' . $_REQUEST['user'] . '";';
 

@@ -54,7 +54,9 @@ if (isset($_REQUEST['detalle'])) {
             echo('<div class="mensajeSesion">');
             echo('Bienvenid@, <b>'.$_SESSION['DescripcionUsuario'].'</b>! <br>');
             echo('Esta es la <b>'.$_SESSION['NumeroConexiones'].'</b> vez que te conectas.<br>');  
-            echo('Tu ultima conexion fue el <b>'.$_SESSION['FechaHoraUltimaConexionAnterior'].'</b>.');
+            if($_SESSION['FechaHoraUltimaConexionAnterior']!=null){
+                echo('Tu ultima conexion fue el <b>'.$_SESSION['FechaHoraUltimaConexionAnterior'].'</b>.');                
+            }
             echo('</div>');
             
         ?>
