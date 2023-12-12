@@ -6,6 +6,22 @@
  */
 // Se renauda la sesion existente
 session_start();
+
+// Se valida si el usuario ha sido identificado
+if (!isset($_SESSION['user204DWESLoginLogoffTema5'])) { 
+    // Se redirige al usuario al Login para que se autentifique
+    header('Location: Login.php');
+    // Termina el programa
+    exit();
+}
+
+// Se valida si el usuario hace click en el botón 'Salir' 
+if (isset($_REQUEST['salir'])) { 
+    // Se redirige al usuario al Programa
+    header('Location: Programa.php'); 
+    // Termina el programa
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +39,12 @@ session_start();
         <h1>Detalle</h1>
     </header>
     <main  class="mainDetalle">
+        <div class="ejercicio ejercicioDetalle">
+            <!-- Se crea un formulario tipo post para agregar la opcion de busqueda-->
+            <form name= "programa" action="<?php echo $_SERVER['PHP_SELF'];?>" id="formDetalle" method="post">
+                <input type="submit" form="form1" value="Salir" name="salir" class="botonPrograma">
+            </form>
+        </div>
         <?php
             // $_SESSION
             echo('<div class="ejercicio">');
