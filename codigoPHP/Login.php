@@ -6,9 +6,7 @@
  */
 
 // Se valida si el usuario hace click en el botón 'Cancelar' 
-if (isset($_REQUEST['cancelar'])) { 
-    // Se destruye su sesión
-    session_destroy(); 
+if (isset($_REQUEST['cancelar'])) {
     // Se redirige al usuario al Login
     header('Location: ../indexLoginLogoffTema5.php'); 
     // Termina el programa

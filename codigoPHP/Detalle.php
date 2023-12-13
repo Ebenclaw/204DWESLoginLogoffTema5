@@ -15,8 +15,8 @@ if (!isset($_SESSION['user204DWESLoginLogoffTema5'])) {
     exit();
 }
 
-// Se valida si el usuario hace click en el botón 'Salir' 
-if (isset($_REQUEST['salir'])) { 
+// Se valida si el usuario hace click en el botón 'Volver' 
+if (isset($_REQUEST['volver'])) { 
     // Se redirige al usuario al Programa
     header('Location: Programa.php'); 
     // Termina el programa
@@ -42,7 +42,7 @@ if (isset($_REQUEST['salir'])) {
         <div class="ejercicio ejercicioDetalle">
             <!-- Se crea un formulario tipo post para agregar la opcion de busqueda-->
             <form name="programa" action="<?php echo $_SERVER['PHP_SELF'];?>" id="formDetalle" method="post">
-                <input type="submit" form="formDetalle" value="Salir" name="salir" class="botonDetalle">
+                <input type="submit" form="formDetalle" value="Volver" name="volver" class="botonDetalle">
             </form>
         </div>
         <?php
@@ -129,7 +129,7 @@ if (isset($_REQUEST['salir'])) {
         <div id="fotos">
             <a href="https://github.com/Ebenclaw/204DWESLoginLogoffTema5" target="_blank"><img id="git" src="../webroot/image/GitHub.png" alt="GitHub"></a>
             <a href="http://ieslossauces.centros.educa.jcyl.es/sitio/" target="_blank"><img id="sauces" src="../webroot/image/sauces.png" alt="Sauces"></a>
-            <a href="Programa.php"><img id="home" src="../webroot/image/home.png" alt="Inicio"></a>
+            <a href="../indexLoginLogoffTema5.php"><img id="home" src="../webroot/image/home.png" alt="Inicio"></a>
     </footer>
 </body>
 
