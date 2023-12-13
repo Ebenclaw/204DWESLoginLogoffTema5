@@ -4,7 +4,6 @@ if( $_REQUEST['es'] ) {
     setcookie( 'lang', $lang, time() +3600 );
 } elseif( $_REQUEST['en']) {
     $lang = 'en';
-    setcookie( 'lang', $lang, time() +3600 );
     header("Location: indexLoginLogoffTema5EN.php");
 }
 ?>
@@ -21,7 +20,7 @@ if( $_REQUEST['es'] ) {
 
     <body>
         <header>
-            <p id="pTitulo">Bienvenido a mi aplicacion</p>
+            <p id="pTitulo">Wellcome to my app</p>
             <h1>Login Logoff</h1>
         </header>
         <main class="main1">         
@@ -34,7 +33,7 @@ if( $_REQUEST['es'] ) {
                         </form>
                     </li>
                     <li></li>
-                    <li><a class="botonInicioSesion" href="codigoPHP/Login.php">Iniciar sesion</a></li>
+                    <li><a class="botonInicioSesion" href="codigoPHP/Login.php">Log in</a></li>
                 </ul>
                 <img src="webroot/image/esquema.PNG" alt="alt"/>
             </div>

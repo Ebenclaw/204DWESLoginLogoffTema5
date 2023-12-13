@@ -29,6 +29,15 @@ header{
     justify-content: flex-end;
 /*    background-color: red;*/
 }
+.listaIndex li{
+    display: inline-block;
+}
+.fotoIdioma{
+    width: 30px;
+}
+.botonInicioSesion:hover{
+    text-decoration: underline;
+}
 .detalle{
     padding: 0;
     height: 60px;
@@ -119,6 +128,17 @@ h1{
     display: flex;
     margin-top: 476.5px;
 /*    background-color: purple;*/
+}
+#formIndex{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;    
+}
+#formIndex input{
+    width: 40px;
+    margin: 0px;
+    margin-right: 10px;
 }
 #form{
     margin-left: 10px;
