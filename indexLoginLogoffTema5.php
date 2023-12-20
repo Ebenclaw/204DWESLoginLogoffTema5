@@ -1,4 +1,9 @@
 <?php
+if(!isset($_COOKIE['idioma'])){
+    setcookie('lang', $lang, time() +3600);
+    
+    exit();
+}
 if( $_REQUEST['es'] ) {
     $lang = 'es';
     setcookie( 'lang', $lang, time() +3600 );
