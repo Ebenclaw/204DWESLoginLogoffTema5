@@ -1,17 +1,17 @@
 <?php
-if(!isset($_COOKIE['idioma'])){
-    setcookie('lang', $lang, time() +3600);
-    
-    exit();
-}
-if( $_REQUEST['es'] ) {
-    $lang = 'es';
-    setcookie( 'lang', $lang, time() +3600 );
-} elseif( $_REQUEST['en']) {
-    $lang = 'en';
-    setcookie( 'lang', $lang, time() +3600 );
-    header("Location: indexLoginLogoffTema5EN.php");
-}
+//if(!isset($_COOKIE['idioma'])){
+//    setcookie('lang', $lang, time() +3600);
+//    
+//    exit();
+//}
+//if( $_REQUEST['es'] ) {
+//    $lang = 'es';
+//    setcookie( 'lang', $lang, time() +3600 );
+//} elseif( $_REQUEST['en']) {
+//    $lang = 'en';
+//    setcookie( 'lang', $lang, time() +3600 );
+//    header("Location: indexLoginLogoffTema5EN.php");
+//}
 ?>
 <!DOCTYPE html>
 <html lang="en">
