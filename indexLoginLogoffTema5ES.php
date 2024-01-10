@@ -1,17 +1,25 @@
 <?php
-//if(!isset($_COOKIE['idioma'])){
-//    setcookie('lang', $lang, time() +3600);
-//    
-//    exit();
-//}
-//if( $_REQUEST['es'] ) {
-//    $lang = 'es';
-//    setcookie( 'lang', $lang, time() +3600 );
-//} elseif( $_REQUEST['en']) {
-//    $lang = 'en';
-//    setcookie( 'lang', $lang, time() +3600 );
-//    header("Location: indexLoginLogoffTema5EN.php");
-//}
+// Se comprueba si esta declarada la cookie del idioma
+if (!isset($_COOKIE['idioma'])) { 
+    // Si no está declarada, se pone por defecto el valor de ES (español)
+    setcookie('idioma', 'ES', time() + 2592000); 
+}
+
+// Se comprueba si se ha pulsado algun boton de idioma
+if(isset($_REQUEST['idioma'])) {
+    // Si se ha pulsado una bandera, se declara una cookie con el valor del idioma seleccionado
+    setcookie( 'idioma', $_REQUEST['idioma'], time() + 2592000);
+    header('Location: indexLoginLogoffTema5ES.php');
+    exit();
+    // Si comprueba el idioma seleccionado
+//    if($_REQUEST['idioma']=='EN'){
+//        // Si el idioma seleccionado es ingles, se redirige la pagina al index en ingles
+//        header('Location: indexLoginLogoffTema5EN.php');
+//    }else{
+//        // Si el idioma seleccionado es español, se redirige la pagina al index en español
+//        header('Location: indexLoginLogoffTema5ES.php');
+//    }
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +42,8 @@
                 <ul class="listaIndex">
                     <li>
                         <form name="index" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="formIndex" method="post">
-                            <input type="image" name="es" form="formIndex" class="fotoIdioma" src="webroot/image/español.png" alt="Idioma Español">
-                            <input type="image" name="en" form="formIndex" class="fotoIdioma" src="webroot/image/ingles.png" alt="Idioma Ingles">
+                            <input type="image" value="ES" name="idioma" form="formIndex" class="fotoIdioma" src="webroot/image/español.png" alt="Español">
+                            <input type="image" value="EN" name="idioma" form="formIndex" class="fotoIdioma" src="webroot/image/ingles.png" alt="Ingles">
                         </form>
                     </li>
                     <li></li>

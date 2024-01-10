@@ -20,7 +20,7 @@ if (isset($_REQUEST['cerrarSesion'])) {
     // Se destruye su sesión
     session_destroy(); 
     // Se redirige al usuario al Login
-    header('Location: Login.php'); 
+    header('Location: ../indexLoginLogoffTema5ES.php'); 
     // Termina el programa
     exit();
 }
@@ -46,10 +46,23 @@ if (isset($_REQUEST['detalle'])) {
 
 <body>
     <header class="programa">
-        <h1>Programa</h1>
+        <?php
+        // Se comprueba el idioma
+        if($_COOKIE['idioma']=='ES'){
+            // Si el idioma es español, se muestra el titulo en castellano
+            echo('<h1>Programa</h1>');
+        }elseif ($_COOKIE['idioma']=='EN') {
+            // Si el idioma es ingles, se muestra el titulo en ingles
+            echo('<h1>Program</h1>');
+        }
+        ?>
+        
     </header>
     <main  class="main2">
         <?php
+        // Se comprueba el idioma
+        if($_COOKIE['idioma']=='ES'){
+            // Si el idioma es español, se muestra el mensaje de bienvenida en castellano
             echo('</div>');
             echo('<div class="mensajeSesion">');
             echo('Bienvenid@, <b>'.$_SESSION['DescripcionUsuario'].'</b>! <br>');
@@ -58,7 +71,17 @@ if (isset($_REQUEST['detalle'])) {
                 echo('Tu ultima conexion fue el <b>'.$_SESSION['FechaHoraUltimaConexionAnterior'].'</b>.');                
             }
             echo('</div>');
-            
+        }elseif ($_COOKIE['idioma']=='EN') {
+            // Si el idioma es ingles, se muestra el mensaje de bienvenida en ingles
+            echo('</div>');
+            echo('<div class="mensajeSesion">');
+            echo('Wellcome, <b>'.$_SESSION['DescripcionUsuario'].'</b>! <br>');
+            echo('This is your <b>'.$_SESSION['NumeroConexiones'].'</b> conection.<br>');  
+            if($_SESSION['FechaHoraUltimaConexionAnterior']!=null){
+                echo('Your last conection was <b>'.$_SESSION['FechaHoraUltimaConexionAnterior'].'</b>.');                
+            }
+            echo('</div>');
+        }
         ?>
         <div class="ejercicio">
             <!-- Se crea un formulario tipo post para agregar la opcion de busqueda-->

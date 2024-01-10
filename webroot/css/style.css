@@ -62,6 +62,10 @@ header{
 h1{
     font-size: 11rem;
 }
+.formIndex button{
+    border: none;
+    background: none;
+}
 .programa{
     position: absolute;
     top: 0;
