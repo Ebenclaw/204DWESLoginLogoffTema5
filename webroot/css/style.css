@@ -63,8 +63,8 @@ h1{
     font-size: 11rem;
 }
 .formIndex button{
-    border: none;
-    background: none;
+    width: 30px;
+    margin-right: 20px;
 }
 .programa{
     position: absolute;
@@ -121,7 +121,7 @@ h1{
     padding-top: 20px;
     padding-right: 20px;
 }
-.container img{
+.container > img{
     padding-top: 30px;
     padding-right: 20px;
     justify-content: flex-end;

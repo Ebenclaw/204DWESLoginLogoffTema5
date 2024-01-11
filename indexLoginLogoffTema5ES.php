@@ -1,9 +1,9 @@
 <?php
 // Se comprueba si esta declarada la cookie del idioma
-if (!isset($_COOKIE['idioma'])) { 
-    // Si no está declarada, se pone por defecto el valor de ES (español)
-    setcookie('idioma', 'ES', time() + 2592000); 
-}
+//if (!isset($_COOKIE['idioma'])) { 
+//    // Si no está declarada, se pone por defecto el valor de ES (español)
+//    setcookie('idioma', 'ES', time() + 2592000); 
+//}
 
 // Se comprueba si se ha pulsado algun boton de idioma
 if(isset($_REQUEST['idioma'])) {
@@ -42,8 +42,8 @@ if(isset($_REQUEST['idioma'])) {
                 <ul class="listaIndex">
                     <li>
                         <form name="index" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="formIndex" method="post">
-                            <input type="image" value="ES" name="idioma" form="formIndex" class="fotoIdioma" src="webroot/image/español.png" alt="Español">
-                            <input type="image" value="EN" name="idioma" form="formIndex" class="fotoIdioma" src="webroot/image/ingles.png" alt="Ingles">
+                            <button type="submit" value="ES" name="idioma"><img src="webroot/image/español.png" alt="esp" class="fotoIdioma"></button>
+                            <button type="submit" value="EN" name="idioma"><img src="webroot/image/ingles.png" alt="eng" class="fotoIdioma"></button>
                         </form>
                     </li>
                     <li></li>
