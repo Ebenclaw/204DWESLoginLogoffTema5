@@ -34,6 +34,8 @@ header{
 }
 .fotoIdioma{
     width: 30px;
+    width: 30px;
+    height: 20px;
 }
 .botonInicioSesion:hover{
     text-decoration: underline;
@@ -62,9 +64,14 @@ header{
 h1{
     font-size: 11rem;
 }
-.formIndex button{
+#formIndex button{
     width: 30px;
+    height: 20px;
     margin-right: 20px;
+    border: none;
+}
+#formIndex button:hover{
+    box-shadow: 0px 0px 5px black;
 }
 .programa{
     position: absolute;
