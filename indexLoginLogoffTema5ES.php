@@ -1,24 +1,24 @@
 <?php
 // Se comprueba si esta declarada la cookie del idioma
-//if (!isset($_COOKIE['idioma'])) { 
-//    // Si no está declarada, se pone por defecto el valor de ES (español)
-//    setcookie('idioma', 'ES', time() + 2592000); 
-//}
+if (!isset($_COOKIE['idioma'])) { 
+    // Si no está declarada, se pone por defecto el valor de ES (español)
+    setcookie('idioma', 'ES', time() + 2592000); 
+}
 
 // Se comprueba si se ha pulsado algun boton de idioma
 if(isset($_REQUEST['idioma'])) {
     // Si se ha pulsado una bandera, se declara una cookie con el valor del idioma seleccionado
     setcookie( 'idioma', $_REQUEST['idioma'], time() + 2592000);
-    header('Location: indexLoginLogoffTema5ES.php');
-    exit();
     // Si comprueba el idioma seleccionado
-//    if($_REQUEST['idioma']=='EN'){
-//        // Si el idioma seleccionado es ingles, se redirige la pagina al index en ingles
-//        header('Location: indexLoginLogoffTema5EN.php');
-//    }else{
-//        // Si el idioma seleccionado es español, se redirige la pagina al index en español
-//        header('Location: indexLoginLogoffTema5ES.php');
-//    }
+    if($_REQUEST['idioma']=='EN'){
+        // Si el idioma seleccionado es ingles, se redirige la pagina al index en ingles
+        header('Location: indexLoginLogoffTema5EN.php');
+        exit();
+    }elseif($_REQUEST['idioma']=='ES'){
+        // Si el idioma seleccionado es español, se redirige la pagina al index en español
+        header('Location: indexLoginLogoffTema5ES.php');
+        exit();
+    }
 } 
 ?>
 <!DOCTYPE html>

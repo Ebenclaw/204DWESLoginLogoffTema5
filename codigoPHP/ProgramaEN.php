@@ -10,7 +10,7 @@ session_start();
 // Se valida si el usuario ha sido identificado
 if (!isset($_SESSION['user204DWESLoginLogoffTema5'])) { 
     // Se redirige al usuario al Login para que se autentifique
-    header('Location: Login.php');
+    header('Location: LoginEN.php');
     // Termina el programa
     exit();
 }
@@ -20,7 +20,7 @@ if (isset($_REQUEST['cerrarSesion'])) {
     // Se destruye su sesión
     session_destroy(); 
     // Se redirige al usuario al Login
-    header('Location: ../indexLoginLogoffTema5ES.php'); 
+    header('Location: ../indexLoginLogoffTema5EN.php'); 
     // Termina el programa
     exit();
 }
@@ -28,7 +28,7 @@ if (isset($_REQUEST['cerrarSesion'])) {
 // Se valida si el usuario hace click en el botón 'Detalle' 
 if (isset($_REQUEST['detalle'])) {
     // Se redirige al usuario al Login
-    header('Location: Detalle.php'); 
+    header('Location: DetalleEN.php'); 
     // Termina el programa
     exit();
 }
@@ -60,21 +60,21 @@ if (isset($_REQUEST['detalle'])) {
     </header>
     <main  class="main2">
         <?php
-            // Se muestra el mensaje de bienvenida en castellano
+            // Se muestra el mensaje de bienvenida en ingles
             echo('</div>');
             echo('<div class="mensajeSesion">');
-            echo('Bienvenid@, <b>'.$_SESSION['DescripcionUsuario'].'</b>! <br>');
-            echo('Esta es la <b>'.$_SESSION['NumeroConexiones'].'</b> vez que te conectas.<br>');  
+            echo('Wellcome, <b>'.$_SESSION['DescripcionUsuario'].'</b>! <br>');
+            echo('This is your <b>'.$_SESSION['NumeroConexiones'].'</b> conection.<br>');  
             if($_SESSION['FechaHoraUltimaConexionAnterior']!=null){
-                echo('Tu ultima conexion fue el <b>'.$_SESSION['FechaHoraUltimaConexionAnterior'].'</b>.');                
+                echo('Your last conection was <b>'.$_SESSION['FechaHoraUltimaConexionAnterior'].'</b>.');                
             }
             echo('</div>');
         ?>
         <div class="ejercicio">
             <!-- Se crea un formulario tipo post para agregar la opcion de busqueda-->
             <form name= "programa" action="<?php echo $_SERVER['PHP_SELF'];?>" id="form1" method="post">
-                <input type="submit" form="form1" value="Detalle" name="detalle" class="botonPrograma">
-                <input type="submit" form="form1" value="Cerrar Sesion" name="cerrarSesion" class="botonPrograma">
+                <input type="submit" form="form1" value="Detail" name="detalle" class="botonPrograma">
+                <input type="submit" form="form1" value="Log off" name="cerrarSesion" class="botonPrograma">
             </form>
         </div> 
     </main>

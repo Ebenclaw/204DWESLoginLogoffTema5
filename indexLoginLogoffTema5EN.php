@@ -1,11 +1,25 @@
 <?php
-if( $_REQUEST['es'] ) {
-    $lang = 'es';
-    setcookie( 'lang', $lang, time() +3600 );
-} elseif( $_REQUEST['en']) {
-    $lang = 'en';
-    header("Location: indexLoginLogoffTema5EN.php");
+// Se comprueba si esta declarada la cookie del idioma
+if (!isset($_COOKIE['idioma'])) { 
+    // Si no está declarada, se pone por defecto el valor de ES (español)
+    setcookie('idioma', 'ES', time() + 2592000); 
 }
+
+// Se comprueba si se ha pulsado algun boton de idioma
+if(isset($_REQUEST['idioma'])) {
+    // Si se ha pulsado una bandera, se declara una cookie con el valor del idioma seleccionado
+    setcookie( 'idioma', $_REQUEST['idioma'], time() + 2592000);
+    // Si comprueba el idioma seleccionado
+    if($_REQUEST['idioma']=='EN'){
+        // Si el idioma seleccionado es ingles, se redirige la pagina al index en ingles
+        header('Location: indexLoginLogoffTema5EN.php');
+        exit();
+    }elseif($_REQUEST['idioma']=='ES'){
+        // Si el idioma seleccionado es español, se redirige la pagina al index en español
+        header('Location: indexLoginLogoffTema5ES.php');
+        exit();
+    }
+} 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,12 +42,12 @@ if( $_REQUEST['es'] ) {
                 <ul class="listaIndex">
                     <li>
                         <form name="index" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="formIndex" method="post">
-                            <input type="image" name="es" form="formIndex" class="fotoIdioma" src="webroot/image/español.png" alt="Idioma Español">
-                            <input type="image" name="en" form="formIndex" class="fotoIdioma" src="webroot/image/ingles.png" alt="Idioma Ingles">
+                            <button type="submit" value="ES" name="idioma"><img src="webroot/image/español.png" alt="esp" class="fotoIdioma"></button>
+                            <button type="submit" value="EN" name="idioma"><img src="webroot/image/ingles.png" alt="eng" class="fotoIdioma"></button>
                         </form>
                     </li>
                     <li></li>
-                    <li><a class="botonInicioSesion" href="codigoPHP/Login.php">Log in</a></li>
+                    <li><a class="botonInicioSesion" href="codigoPHP/LoginEN.php">Log in</a></li>
                 </ul>
                 <img src="webroot/image/esquema.PNG" alt="alt"/>
             </div>
