@@ -3,22 +3,24 @@
 if (!isset($_COOKIE['idioma'])) { 
     // Si no está declarada, se pone por defecto el valor de ES (español)
     setcookie('idioma', 'ES', time() + 2592000); 
+    // Si el idioma seleccionado es ingles, se redirige la pagina al index en ingles
+    header('Location: indexLoginLogoffTema5ES.php');
+    exit();
 }
 
-// Se comprueba si se ha pulsado algun boton de idioma
-if(isset($_REQUEST['idioma'])) {
-    // Si se ha pulsado una bandera, se declara una cookie con el valor del idioma seleccionado
-    setcookie( 'idioma', $_REQUEST['idioma'], time() + 2592000);
-    // Si comprueba el idioma seleccionado
-    if($_REQUEST['idioma']=='EN'){
-        // Si el idioma seleccionado es ingles, se redirige la pagina al index en ingles
-        header('Location: indexLoginLogoffTema5EN.php');
-        exit();
-    }elseif($_REQUEST['idioma']=='ES'){
-        // Si el idioma seleccionado es español, se redirige la pagina al index en español
-        header('Location: indexLoginLogoffTema5ES.php');
-        exit();
-    }
+// Se comprueba el idioma seleccionado
+if(isset($_REQUEST['ingles'])){
+    // Si se ha pulsado una bandera, se declara una cookie con el valor ingles
+    setcookie( 'idioma', $_REQUEST['ingles'], time() + 2592000);
+    // Si el idioma seleccionado es ingles, se redirige la pagina al index en ingles
+    header('Location: indexLoginLogoffTema5EN.php');
+    exit();
+}elseif(isset($_REQUEST['castellano'])){
+    // Si se ha pulsado una bandera, se declara una cookie con el valor castellano
+    setcookie( 'idioma', $_REQUEST['castellano'], time() + 2592000);
+    // Si el idioma seleccionado es español, se redirige la pagina al index en español
+    header('Location: indexLoginLogoffTema5ES.php');
+    exit();
 } 
 ?>
 <!DOCTYPE html>
@@ -42,8 +44,8 @@ if(isset($_REQUEST['idioma'])) {
                 <ul class="listaIndex">
                     <li>
                         <form name="index" action="<?php echo $_SERVER['PHP_SELF']; ?>" id="formIndex" method="post">
-                            <button type="submit" value="ES" name="idioma"><img src="webroot/image/español.png" alt="esp" class="fotoIdioma"></button>
-                            <button type="submit" value="EN" name="idioma"><img src="webroot/image/ingles.png" alt="eng" class="fotoIdioma"></button>
+                            <button type="submit" value="ES" name="castellano"><img src="webroot/image/español.png" alt="esp" class="fotoIdioma"></button>
+                            <button type="submit" value="EN" name="ingles"><img src="webroot/image/ingles.png" alt="eng" class="fotoIdioma"></button>
                         </form>
                     </li>
                     <li></li>

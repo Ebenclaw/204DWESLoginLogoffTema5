@@ -172,7 +172,7 @@ if ($entradaOK) {
             <div id="fotos">
                 <a href="https://github.com/Ebenclaw/204DWESLoginLogoffTema5" target="_blank"><img id="git" src="../webroot/image/GitHub.png" alt="GitHub"></a>
                 <a href="http://ieslossauces.centros.educa.jcyl.es/sitio/" target="_blank"><img id="sauces" src="../webroot/image/sauces.png" alt="Sauces"></a>
-                <a href="../indexLoginLogoffTema5ES.php"><img id="home" src="../webroot/image/home.png" alt="Inicio"></a>
+                <a href="../indexLoginLogoffTema5EN.php"><img id="home" src="../webroot/image/home.png" alt="Inicio"></a>
         </footer>
     </body>
 
